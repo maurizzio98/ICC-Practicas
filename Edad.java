@@ -125,7 +125,7 @@ public class Edad {
   //Recien nacido 7u7
 
 else if ((diaactual==d && mesactual==m) && (a==anioactual)  ) {
-System.out.println("¡Naciste hoy, " + nombre + "! :)");
+System.out.println("¡Parece que naciste hoy, " + nombre + "! :)");
 } else {
 
   //Calcular cantidad de días para el proximo cumpleaños
