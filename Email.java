@@ -10,7 +10,7 @@ public class Email {
 
       Scanner in = new Scanner (System.in) ;
       String texto, email, textominus ;
-      int posicionciencias, posicionarroba ;
+      int posicionciencias, posicionarroba, hashcode ;
 
       System.out.println("Dame un texto:") ;
       texto = in.nextLine() ;
@@ -20,7 +20,7 @@ public class Email {
       textominus = texto.toLowerCase() ;
       posicionarroba= textominus.indexOf("@") ;
 
-      if(posicionarroba==1){ //ME FALTAN CONDICIONES
+      if(posicionarroba==-1){ //ME FALTAN CONDICIONES
 
       System.out.println("No hay direccion electronica");
 
@@ -30,11 +30,11 @@ public class Email {
 
         posicionciencias= textominus.indexOf("@ciencias.unam.mx") ;
 
-        if(posicionciencias==1){ //Me FALTA METODO PARA CONSEGUIR CORREO
+        if(posicionciencias==-1){ //Me FALTA METODO PARA CONSEGUIR CORREO
 
-          email = texto ; //CORREO NO ES IGUAL A TEXTO :v
+          hashcode = texto.hashCode(); //CORREO NO ES IGUAL A TEXTO :v
 
-          System.out.println("La direccion es " + email +" pero no está en el dominio de ciencias");
+          System.out.println("La direccion es " + hashcode +" pero no está en el dominio de ciencias");
         } //ACABA RESTRICCION NO CORREO DE CIENCIAS
 
         else {
