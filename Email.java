@@ -20,7 +20,7 @@ public class Email {
       textominus = texto.toLowerCase() ;
       posicionarroba= textominus.indexOf("@") ;
 
-      if(posicionarroba<0){ //ME FALTAN CONDICIONES
+      if(posicionarroba==1){ //ME FALTAN CONDICIONES
 
       System.out.println("No hay direccion electronica");
 
@@ -30,7 +30,7 @@ public class Email {
 
         posicionciencias= textominus.indexOf("@ciencias.unam.mx") ;
 
-        if(posicionciencias<0){ //Me FALTA METODO PARA CONSEGUIR CORREO
+        if(posicionciencias==1){ //Me FALTA METODO PARA CONSEGUIR CORREO
 
           email = texto ; //CORREO NO ES IGUAL A TEXTO :v
 
