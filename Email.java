@@ -10,7 +10,7 @@ public class Email {
 
       Scanner in = new Scanner (System.in) ;
       String texto, email, textominus ;
-      int posicionciencias, posicionarroba, hashcode ;
+      int posicionciencias, posicionarroba ;
 
       System.out.println("Dame un texto:") ;
       texto = in.nextLine() ;
@@ -32,9 +32,9 @@ public class Email {
 
         if(posicionciencias==-1){ //Me FALTA METODO PARA CONSEGUIR CORREO
 
-          hashcode = texto.hashCode(); //CORREO NO ES IGUAL A TEXTO :v
+          email = texto ; //CORREO NO ES IGUAL A TEXTO :v
 
-          System.out.println("La direccion es " + hashcode +" pero no está en el dominio de ciencias");
+          System.out.println("La direccion es " + email +" pero no está en el dominio de ciencias");
         } //ACABA RESTRICCION NO CORREO DE CIENCIAS
 
         else {
