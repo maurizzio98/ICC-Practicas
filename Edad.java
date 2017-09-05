@@ -65,7 +65,7 @@ public class Edad {
 
   //Restriciones año no bisiesto
 
-  else if( (m==2) && (p!=0 && ( q==0 || r!=0 )) && (d >= 28) ) {
+  else if( (m==2) && (p!=0 && ( q==0 || r!=0 )) && (d > 28) ) {
   System.out.println("Día inválido");
   }
 

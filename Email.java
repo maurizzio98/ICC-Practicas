@@ -39,7 +39,7 @@ public class Email {
 
         else {
 
-            System.out.println(texto);
+            System.out.println("Este es un dominio @ciencias");
             System.out.println(posicionciencias);
 
 
