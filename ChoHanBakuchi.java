@@ -40,49 +40,50 @@ public class ChoHanBakuchi{
                 dado2 = d2.lanzar();
                 suma = dado1 + dado2 ;
                 parimpar = suma % 2 ;
+                validochohan = ((chohan.equals("cho")) || (chohan.equals("han"))) ;
 
+            if (validochohan==true) {
                   if (parimpar == 0) {
 
                           if (chohan.equals("cho")){
-                            System.out.println("El dado 1 muestra " + dado1);
+                            System.out.println("\nEl dado 1 muestra " + dado1);
                             System.out.println("El dado 2 muestra " + dado2);
                             System.out.println("\nLa suma de estos es " + suma + "\n");
                             System.out.println("Ganaste :)\n");
                           }
 
                           else if (chohan.equals("han")){
-                            System.out.println("El dado 1 muestra " + dado1);
+                            System.out.println("\nEl dado 1 muestra " + dado1);
                             System.out.println("El dado 2 muestra " + dado2);
                             System.out.println("\nLa suma de estos es " + suma + "\n");
                             System.out.println("Perdiste :(\n");
                           }
 
-                          else {
-                            System.out.println("\nNo apostaste ni por Cho ni por Han. Juego invalidado :(\n");
-                          }
                         }
                   else if (parimpar != 0) {
 
                     if (chohan.equals("cho")){
-                      System.out.println("El dado 1 muestra " + dado1);
+                      System.out.println("\nEl dado 1 muestra " + dado1);
                       System.out.println("El dado 2 muestra " + dado2);
                       System.out.println("\nLa suma de estos es " + suma + "\n");
                       System.out.println("Perdiste :(\n");
                     }
 
                     else if (chohan.equals("han")) {
-                      System.out.println("El dado 1 muestra " + dado1);
+                      System.out.println("\nEl dado 1 muestra " + dado1);
                       System.out.println("El dado 2 muestra " + dado2);
                       System.out.println("\nLa suma de estos es " + suma + "\n");
                       System.out.println("Ganaste :)\n");
                     }
 
 }
-                    else {
-                      System.out.println("\nNo apostaste ni por Cho ni por Han. Juego invalidado :(\n");
-                    }
 
 
+} //ACABA CASO VALIDO
+
+else if (validochohan==false){
+  System.out.println("\nNo apostaste ni por Cho ni por Han. Juego invalidado :(\n");
+}
 
 
                   } //Acaba modo un jugador
