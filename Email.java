@@ -16,16 +16,14 @@ public class Email {
       System.out.println("Dame un texto:") ;
       texto = in.nextLine() ;
 
-
-      texto = texto.trim() ;
       textominus = texto.toLowerCase() ;
       posicionarroba= textominus.indexOf("@") ;
 
-      if(posicionarroba==-1){ //ME FALTAN CONDICIONES
+      if(posicionarroba==-1){ 
 
       System.out.println("No hay direccion electronica");
 
-    } //ACABA RESTRICCION NO EMAIL
+    }
 
       else {
 
@@ -50,7 +48,6 @@ public class Email {
             }
 
 }
- //ACABA RESTRICCION NO CORREO DE CIENCIAS
 
 //CORREO DE CIENCIAS
         else {
@@ -71,10 +68,10 @@ public class Email {
 
             }
 
-        } //ACABA ELSE SI CORREO CIENCIAS
+        }
 
-      } //ACABA ELSE SÍ CORREO ELECTRÓNICO
+      }
 
 
-    } //NO BORRAR - PUBLIC CLASS
-} //NO BORRAR - MAIN()
+    }
+}
