@@ -69,7 +69,7 @@ public class Baraja{
 				numeros[random] = true;
 			}
 
-			}while(differentRandom == true);
+			}while(differentRandom == false);
 
 			baraja[i] = barajaAux[random];
 
