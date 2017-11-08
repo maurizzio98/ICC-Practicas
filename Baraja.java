@@ -3,7 +3,7 @@ import java.util.Random;
 public class Baraja{
 
 	String[] PALOS = {"Picas", "Corazon", "Diamante", "Trebol"};
-	String[] VALOR = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+	static String[] VALOR = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 	Carta[] baraja ;
 
 	public Baraja(){
@@ -55,20 +55,27 @@ public class Baraja{
 		Random rdm = new Random();
 		boolean[] numeros = new boolean[baraja.length];
 		Carta[] barajaAux = baraja;
+		boolean differentRandom;
+		int random;
 
 		for(int i=0;i<baraja.length;i++){
 
 			do{
-			boolean differentRandom=false;
-			int random = rdm.nextInt(baraja.length);
-			boolean sameRandom = boolean[random];
-			if(sameRandom==false)
+
+			random = rdm.nextInt(baraja.length);
+
+			if(numeros[random]==false){
 				differentRandom = true;
-			}while(differentRandom);
+				numeros[random] = true;
+			}
+
+			}while(differentRandom == true);
 
 			baraja[i] = barajaAux[random];
 
 		}
+
+	
 
 	}
 
@@ -86,7 +93,28 @@ public class Baraja{
 	}
 
 	public boolean juego(Carta c){
-		return true;
+
+		boolean existeCartaMayor = false;
+
+		for(int i=0;i<baraja.length;i++){
+			if(Baraja.indiceEnArrayValor(baraja[i]) > Baraja.indiceEnArrayValor(c))
+				existeCartaMayor = true;
+		}
+
+		return existeCartaMayor ;
+		
+	}
+
+	public static int indiceEnArrayValor(Carta c){
+		
+		int index = -1;
+
+		for(int i=0;i<VALOR.length;i++){
+			if(c.valor.equals(VALOR[i]))
+				index = i;
+		}
+
+		return index;
 	}
 
 
