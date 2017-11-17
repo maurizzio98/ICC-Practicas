@@ -12,14 +12,14 @@ import java.util.Scanner ;
       System.out.println("Cantidad actual:");
       cant = in.nextInt();
 
-      Cafetera laChingona = new Cafetera(capmax,cant);
+      Cafetera laCafetera = new Cafetera(capmax,cant);
 
       System.out.println("Obtener 1 asignar 2");
       seleccion = in.nextInt();
 
       if(seleccion==1){
-      cm = laChingona.obtenerCapacidadMaxima();
-      ca = laChingona.obtenerCantidadActual();
+      cm = laCafetera.obtenerCapacidadMaxima();
+      ca = laCafetera.obtenerCantidadActual();
 
       System.out.println("Capacidad máxima: " + cm);
       System.out.println("Cantidad actual: " + ca);
@@ -34,11 +34,11 @@ import java.util.Scanner ;
         System.out.println("Dame cantidad actual");
         nuevaca = in.nextInt();
 
-        laChingona.asignarCapacidadMaxima(nuevacm);
-        laChingona.asignarCantidadActual(nuevaca);
+        laCafetera.asignarCapacidadMaxima(nuevacm);
+        laCafetera.asignarCantidadActual(nuevaca);
 
-        cm = laChingona.obtenerCapacidadMaxima();
-        ca = laChingona.obtenerCantidadActual();
+        cm = laCafetera.obtenerCapacidadMaxima();
+        ca = laCafetera.obtenerCantidadActual();
 
         System.out.println("Capacidad máxima: " + cm);
         System.out.println("Cantidad actual: " + ca);

@@ -18,10 +18,12 @@ public class Edad {
 
 	//Recabar informacion
 
-  System.out.print("\nDame tu nombre: ");
+  System.out.println("");
+  System.out.print("Dame tu nombre: ");
   nombre = in.nextLine();
 
-  System.out.println("\n" + nombre + ", dame tu fecha de nacimiento");
+  System.out.println("");
+  System.out.println(nombre+ ", dame tu fecha de nacimiento");
 
   System.out.print("Dia: ");
   d = in.nextInt();
@@ -32,22 +34,15 @@ public class Edad {
   System.out.print("Año: ");
   a = in.nextInt();
 
+ //Validar la informacion
+
  p = a % 4 ;
  q = a % 100 ;
  r = a % 400 ;
 
-   Fecha fechaactual = new Fecha() ;
-
-   diaactual = fechaactual.obtenerDia();
-   mesactual = fechaactual.obtenerMes();
    anioactual = fechaactual.obtenerAnio();
 
    System.out.println("");
-
-  //Validar la información
-
-
-  //Restricciones día
 
   if((m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12) && d > 31 ) {
     System.out.println("Día inválido");
@@ -57,48 +52,30 @@ public class Edad {
     System.out.println("Día inválido");
   }
 
-  //Restriciones año bisiesto
-
+  //Año bisiesto
   else if( (m==2) && (p==0 && ( q!=0 || r==0 )) && (d > 29) ) {
   System.out.println("Día inválido");
   }
 
-  //Restriciones año no bisiesto
-
-  else if( (m==2) && (p!=0 && ( q==0 || r!=0 )) && (d > 28) ) {
+  //Año no bisiesto
+  else if( (m==2) && (p!=0 && ( q==0 || r!=0 )) && (d >= 28) ) {
   System.out.println("Día inválido");
   }
 
 
-  //Restricciones mes
 
   else if(m > 12 ) {
     System.out.println("Mes inválido");
   }
 
-  //Restricciones año
-
   else if(a<1900) {
     System.out.println("Año inválido: debe ser mayor a 1900");
   }
 
-
-  //Restricciones fecha nacimiento mayor a fecha actual
   else if(a>anioactual) {
-    System.out.println("Tu fecha de nacimiento no puede ser mayor a la actual :(");
+    System.out.println("Tu fecha de nacimiento no puede ser mayor a la actual.");
   }
-
-  else if(a==anioactual && m>mesactual) {
-    System.out.println("Tu fecha de nacimiento no puede ser mayor a la actual :(");
-  }
-
-  else if(a==anioactual && m==mesactual && d>diaactual) {
-    System.out.println("Tu fecha de nacimiento no puede ser mayor a la actual :(");
-  }
-
- //Inicia caso general
-
-    //Calcular edad
+  	//Calcular edad
 
   else {
 
@@ -108,52 +85,58 @@ public class Edad {
 
   dtranscurridoscumpleanos = dtranscurridoscumpleanos + 365 ;
 
-    dtranscurridoshoy = fechaactual.diasTranscurridos() ;
+  Fecha fechaactual = new Fecha() ;
+
+  dtranscurridoshoy = fechaactual.diasTranscurridos() ;
 
   dtranscurridoscumplehoy = dtranscurridoshoy - dtranscurridoscumpleanos - 4 ;
 
   edad = (dtranscurridoscumplehoy/365) + 1 ;
 
- System.out.println(nombre + ", tienes " + edad + " años ");
+ System.out.println(nombre+", tienes " + edad + " años ");
 
-  //¡Feliz cumpleaños!
+  //Feliz cumpleaños
+
+  diaactual = fechaactual.obtenerDia();
+  mesactual = fechaactual.obtenerMes();
 
     if ((diaactual==d && mesactual==m) && (a!=anioactual)) {
   System.out.println("Feliz cumpleaños, " + nombre + " :)");
 }
 
-  //Recien nacido 7u7
-
 else if ((diaactual==d && mesactual==m) && (a==anioactual)  ) {
-System.out.println("¡Parece que naciste hoy, " + nombre + "! :)");
+System.out.println("¡Hoy naciste, " + nombre + "! :)");
 } else {
 
-  //Calcular cantidad de días para el proximo cumpleaños
+  //Calcular cantidad de dias para el proximo cumpleanos
 
   dcumpleanos = 365 - (dtranscurridoscumplehoy % 365) ;
   System.out.println("Faltan " + dcumpleanos + " días para tu cumpleaños ");
 
 }
 
-  //Calcular en que rango de edad está
+  //Calcular en que rango de edad esta
 
   if (edad<18){
-    System.out.println("Eres menor de edad\n");
+    System.out.println("Eres menor de edad");
   }
 
   else if (edad>=18 && edad <=30){
-    System.out.println("Eres un adulto joven\n");
+    System.out.println("Eres un adulto joven");
   }
 
   else if (edad>30 && edad <=60){
-    System.out.println("Eres un adulto\n");
+    System.out.println("Eres un adulto");
   }
 
   else {
-    System.out.println("Eres un adulto mayor\n");
+    System.out.println("Eres un adulto mayor");
   }
 
-} //Acaba caso general
+  }
+
+  System.out.println("");
+
 
     }
 }
