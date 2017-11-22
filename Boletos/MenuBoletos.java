@@ -144,12 +144,8 @@ public class MenuBoletos{
 
 	public static String boletoImpreso(String espectaculo,double precio,Date fechaEvento, Boletos boletoOriginal,int opcion){
 
-		if (opcion!=1)
-			return "Boletos para " + espectaculo + "\nPrecio por boleto: $" + boletoOriginal.precio + "\nPrecio por boleto (con descuento): $"
-				    + costo/numBoletos + "\nImporte total: $" + costo  + "\nFecha de realizacion: " + fechaEvento.getDate() + "/" 
-				    + fechaEvento.getMonth() + "/" + fechaEvento.getYear();
-		else return "Boletos para " + espectaculo + "\nPrecio por boleto: $" + boletoOriginal.precio  + "\nImporte total: $" + costo 
-					 + "\nFecha de realizacion: " + fechaEvento.getDate() + "/" + fechaEvento.getMonth() + "/" + fechaEvento.getYear();
+		if (opcion!=1) return "Boletos para " + espectaculo + "\nPrecio por boleto: $" + boletoOriginal.precio + "\nPrecio por boleto (con descuento): $" + costo/numBoletos + "\nImporte total: $" + costo  + "\nFecha de realizacion: " + fechaEvento.getDate() + "/" + fechaEvento.getMonth() + "/" + fechaEvento.getYear();
+		else return "Boletos para " + espectaculo + "\nPrecio por boleto: $" + boletoOriginal.precio  + "\nImporte total: $" + costo + "\nFecha de realizacion: " + fechaEvento.getDate() + "/" + fechaEvento.getMonth() + "/" + fechaEvento.getYear();
 
 	}
 
