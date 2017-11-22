@@ -2,7 +2,7 @@ import java.util.Date;
 
 public class Boletos{
 	double precio;
-	private static byte claveNum = 1;
+	private static byte claveNum = 0;
 	static byte claveNumPrep = 1;
 	static byte claveNumEst = 1;
 	static byte claveNum3 = 1;
@@ -15,7 +15,7 @@ public class Boletos{
 		this.espectaculo = espectaculo;
 		fechaEvento = new Date(anioEvento,mesEvento,diaEvento);
 		
-		if(claveNum > 999) claveNum = 1;
+		if(claveNum > 999) claveNum = 0;
 
 		if(claveNum < 10){
 			clave = "BN-00" + claveNum;

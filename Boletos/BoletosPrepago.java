@@ -10,8 +10,8 @@ public class BoletosPrepago extends Boletos{
 		long diferenciaEnMS = boleto.fechaEvento.getTime() - fechaCompra.getTime();
 		int diasDiferencia = (int) diferenciaEnMS/(1000*60*60*24);
 
-		if(diasDiferencia>=10) super.asignarPrecio(boleto.precio*0.2);
-		else if(diasDiferencia<10&&diasDiferencia>3) super.asignarPrecio(boleto.precio*0.1);
+		if(diasDiferencia>=10) super.asignarPrecio(boleto.precio*0.8);
+		else if(diasDiferencia<10&&diasDiferencia>3) super.asignarPrecio(boleto.precio*0.9);
 
 		if(claveNumPrep > 999) super.reiniciarClaveNumPrep();
 
